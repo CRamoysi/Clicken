@@ -50,6 +50,33 @@ public abstract class Artefact {
 			s.setPosition(rx, ry);
 		}
 	}
+	public void moveX(float m){
+		this.sx += m;
+		this.rx += m;
+	}
+	public void moveY(float m){
+		this.sy += m;
+		this.ry += m;
+	}
+	//--Deplacements-----------------------
+	private float speedX , speedY = 0;
+	public void setSpeed(float x, float y){this.speedX=x;this.speedY=y;}
+	public void move(float x, float y){
+
+		if(x>0){
+			this.moveX(speedX);
+		}else if(x<0){
+			this.moveX(-speedX);
+		}
+		if(y>0){
+			this.moveY(-speedY);
+		}else if(y<0){
+			this.moveY(speedY);
+		}
+		
+	}
+	
+	
 	
 	//--VIEW-----------------------------------
 	private View view;

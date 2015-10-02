@@ -7,15 +7,17 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.input.GestureDetector.GestureListener;
 
 /**
  * @author rci
  *
  */
-public abstract class View implements ApplicationListener {
+public abstract class View implements ApplicationListener, GestureListener, InputProcessor{
 	//=====VIEW DISPLAY===================================================
 	private OrthographicCamera camera;
 	public OrthographicCamera getCamera(){return this.camera;}
@@ -43,6 +45,10 @@ public abstract class View implements ApplicationListener {
 		this.w = Gdx.graphics.getWidth();
 		this.h = Gdx.graphics.getHeight();
 		this.camera = new OrthographicCamera(1, h/w);
+
+		camera.viewportWidth=Config.WINDOW_W;
+        camera.viewportHeight=Config.WINDOW_H;
+        camera.update();
 		this.batch = new SpriteBatch();
 	}
 
