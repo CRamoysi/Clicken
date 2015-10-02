@@ -1,0 +1,517 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+
+\title{}
+\author{}
+\date{}
+
+\pdfinfo{%
+  /Title    (GDD The rise of the chicken)
+  /Author   (CRamoysi)
+  /Creator  (CRamoysi)
+  /Producer (CRamoysi)
+  /Subject  (GDD)
+  /Keywords (GDD, chicken, game)
+}
+
+\begin{document}
+\maketitle
+
+
+\part{Présentation générale} %1
+
+	\section{Philosophie} %1.1
+		\paragraph{} Qu'y a t'il de mieux qu'une poule? Plein de poules. Qu'y a 
+t'il de mieux que plein de poules? Plein de poules droguées et aggressive. 
+Pourquoi etre serieux quand on peux déconner? A l'origine il s'agissait d'un 
+délire pour une ludumdare. Il fallait faire un petit jeu utilisant une arme 
+inhabituelle. Bien evidement la premiere idée venu à l'esprit est d'etre un 
+fermier lance du grain sur des zombies qui approchent pour que ses poules les 
+picorent à mort. Le tout avec une musique homemade de cotcotement de poules sur 
+le theme de la chevauchée des valkyrie de Wagner. bref un bon délire qui a donné 
+envie de continuer ``la liscence''. 
+	\section{Questions fréquentes}%1.2
+		\subsection{Qu'est-ce que ce jeu?}
+			\paragraph{} Il s'agit d'un jeu de fuite de type survival. Les 
+protagonistes doivent fuir une menace sans se faire attraper. Avec un style
+RPG, les protagoniste doivent se deplacer sans bruit pour ne pas attirer les
+poules.
+
+		\subsection{Où le jeu se passe t'il?}
+			\paragraph{} Le jeu se passe sur Terre. Different enironnement se 
+	succederont tels qu'un centre commercial, un aeroport, une gare, une 
+ferme, etc. Il s'agit 	d'environnement classique mais apres apocalypse. 
+
+		\subsection{Qu'est ce que je contrôle?}
+			\paragraph{} Je controle un jeune enfant sur les épaules de son 
+pere.
+
+			\subsection{De combien de personnage ai-je le contrôle?}
+			\paragraph{} Je controle que le pere et l'enfant comme une seule 
+entité.
+
+		\subsection{Quel est le but du jeu?}
+			\paragraph{} Le but est simple: fuir!
+
+		\subsection{Qu'est-ce qui rend ce jeu different?}
+			\paragraph{} L'univers: totalement loufoque et décalé mais avec 
+		une vraie histoire. Le principe n'est pas de tirer sur tout ce qui 
+bouge mais simplement de fuir, sans se faire rattraper. La gestion du bruit 
+est très importante. 
+
+\part{Mécaniques de jeu} %2
+	\section{Gameplay}%2.1
+		\subsection{Description générale}
+			\paragraph{} Le personnage se deplace sur un plan en 2D vue de haut, 
+il a ainsi possibilité de se déplacer vers le haut, le bas, la gauche et la 
+droite. Une indication montrera au joueur la source de chaque bruit sous forme 
+d'un cercle coloré dont le centre est la source. Le cerle sera plus ou moins 
+gros et plus ou moins rouge en fonction de la distance et l'intensité du bruit. 
+Il serait interessant également de gerer les obstacles qui attenueront ou 
+amplifieront plus ou moins les sons.
+
+		\subsection{Les flux du jeu}
+			\paragraph{} *progression, partie typique, deroulement d'une 
+partie,	défis...*
+
+		\subsection{Les éléments du gameplay}
+			\paragraph{} Le joueur pourra interagir avec son environnement tel 
+qu'ouvrir des portes, pousser des objets pas trop lourd, porter un objet et le 
+lancer. Il aura la possibilité de se reposer, manger, etc pour regenerer sa vie, 
+sa vigueur.
+			\paragraph{} Le joueur devra gerer bien evidement le bruit qu'il 
+fait mais sa fatigue et sa faim. les phases de recherche de nourriture et les 
+phases de repos seront importantes.
+			\paragraph{} Le joueur pourra lancer des objets au loin pour y 
+attirer les poules avec le bruit. Le joueurs pourra également mettre du grains 
+par terre pour attirer les poules et passer discretement plus loin.
+
+		\subsection{Données statistiques et physiques}
+		
+		\subsubsection{Les statistiques du personnage}
+			\begin{itemize}
+				\item Furtivité: Plus la furtivité est élevée et moins l'on 
+genere de bruit lors des deplacements
+				\item Santé: à 0 on meurt. Plus la santé est basse et moins on 
+se deplace vite et plus la fatigue augmente vite.
+				\item Folie: Plus la folie est élevé et plus on a de chance de 
+faire du bruits (un cri, un pleur, une réaction de peur). La folie augmente 
+quand 
+on attire les poules, quand on fait un gros bruit d'un coup (objet qui tombe 
+par exemple ou un coup de tonerre, etc). À l'inverse la folie diminue quand 
+on dort, que l'on a pas eu de souci depuis un moment.
+				\item Fatigue: plus la fatigue est élevée, moins on se déplace 
+vite. On diminue la fatigue par le sommeil
+				\item Faim: plus la faim est haute est plus on se fatigue vite 
+et moins on est furtif (possibilité de gargouilli). Quand la faim est au 
+maximum, on perd des pv. Pour reduire la faim, il faut manger...
+			\end{itemize}
+
+		\subsubsection{Les déplacements}
+			\paragraph{} Les deplacements se font vers le haut, le bas, la 
+gauche et la droite. Il faut pouvoir gerer la vitesse de deplacements (possible 
+facilement avec un joystick de manette, a voir avec un clavier). Plus on se 
+déplace vite et plus on fait de bruit. On sera ralenti les pieds dans 
+l'eau, 	dans la boue, etc.
+
+		\subsection{Description de l'IA}
+			\paragraph{} L'IA concerne principalement les poules. Elles se 
+deplaceront en fonction du bruit. Plus un bruit est fort et près et plus elles 
+se precipiteront sur la source. Si un bruit n'est pas intense, il yaura une 
+chance qu'elles ne se deplacent pas tout de suite, si le bruit se repete elles 
+arriveront.
+			\paragraph{} Si aucun bruit ne survient, elles se dirigeront vers 
+de la nourriture ou bougeront de façon aléatoire le cas échéant.
+
+
+
+
+		\subsection{Mécanisme d'aide pour l'apprentissage}
+			\paragraph{} L'apprentissage se fera par la lecture de feuilles ou 
+de livre au sol. La toute premiere aide sera noté dans le décors de façon 
+évidente anoncant comment se deplacer et rammasser;
+
+		\subsection{Durée de vie du jeu}
+			\paragraph{}
+		\subsection{Difficulté du jeu}
+			\paragraph{} Il y aura 3 niveaux de difficultés:
+				\begin{itemize}
+					\item ``Poule mouillé'': Il s'agit de la difficulté 
+minimal. La folie, ma faim et la fatigue ne monte pas. Les poules sont à moitié 
+sourde  
+					\item ``Chair de poule'': Difficulté intermediaire. La 
+folie, la fatigue et la faim agissent normalement mais les poules sont à moitié 
+sourde
+					\item ``Poulets rotis'': La fatigue, la faim et la folie 
+evoluent normalement. L'instinct prédateur des poules est à son paroxysme;
+				\end{itemize}
+		
+		
+		\subsection{}
+		
+\end{document}		
+		
+2.1.10. Modes Mono-joueur
+2.1.10.1. Vue générale
+
+Décrivez en quelques phrases le jeu mono-joueur.
+
+2.1.10.2. Histoire
+
+Décrivez les grandes lignes de l’histoire du jeu, en vous référant à une annexe pour les détails, en effet l’histoire d’un jeu est souvent très longue à décrire.
+
+2.1.10.3. Les Objets de quête ou Objectifs
+
+Décrivez les objets de quête de votre jeu ou autrement dit, les objectifs à atteindre par le joueur.
+
+2.1.10.4. Conditions de victoire et d’échec
+
+Quand une partie en mode mono-joueur est-elle terminée ? Comment le joueur sait-il s’il a gagné ou perdu ?
+
+2.1.10.5. Sauver et Recharger
+
+Possibilité de charger/sauver à n’importe quel moment, ou à certains moment bien précis, ou pas du tout.
+
+2.1.10.6. Pause
+
+Possibilité de mettre en pause le jeu et options éventuelles.
+
+2.1.10.7. Personnalisation
+
+Décrivez comment chaque joueur se verra offrir la possibilité de personnaliser son expérience de jeu. Par exemple, créer ses unités, son personnage ou son véhicule, voir son niveau, son univers de jeu.
+
+2.1.10.8. Options de jeu
+
+Décrivez les différentes options de jeu, mise à la disposition de l’utilisateur.
+
+Par exemple, le réglage des commandes, du son, etc
+
+2.1.11. Modes Multijoueurs
+2.1.11.1. Vue générale
+
+Décrivez ici le mode multi-joueur dans toute sa généralité. En particulier, ses liens avec le mode mono-joueur et les extensions qu’il propose, en dehors évidemment du fait de jouer à plusieurs.
+
+2.1.11.2. Les Objets de quête ou Objectifs
+
+Décrivez les objets de quête de votre jeu ou autrement dit, les objectifs à atteindre par le joueur.
+
+2.1.11.3. Conditions de victoire et d’échec
+
+Quand une partie en mode mono-joueur est-elle terminée ? Comment le joueur sait-il s’il a gagné ou perdu ?
+
+2.1.11.4. Sauver et Recharger
+
+Possibilité de charger/sauver à n’importe quel moment, ou à certains moment bien précis, ou pas du tout.
+
+2.1.11.5. Pause
+
+Possibilité de mettre en pause le jeu et options éventuelles.
+
+2.1.11.6. Persistance
+
+Votre monde est-il persistant ou lié à une partie temporaire ? Décrivez ce paragraphe de manière fonctionnelle, les solutions techniques viendront après.
+
+2.1.11.7. Nombre de joueurs
+
+Combien de joueurs pourront participer en même temps, avoir de comptes au total ? Une estimation de la volumétrie à traiter, utile pour dimensionner le développement.
+
+2.1.11.8. Personnalisation
+
+Décrivez comment chaque joueur se verra offrir la possibilité de personnaliser son expérience de jeu. Par exemple, créer ses unités, son personnage ou son véhicule, voir son niveau, son univers de jeu.
+
+2.1.11.9. Mode écran divisé
+
+Multi-Joueur ne rime pas forcément avec plusieurs machines, un réseau, Internet. Si votre jeu se joue à plusieurs sur un même écran, décrivez alors le mode de fonctionnement des parties. Comment l’écran est splité, comment les informations sont organisées à l’écran, etc.
+
+2.1.11.10. Options de jeu
+
+Décrivez les différentes options de jeu, mise à la disposition de l’utilisateur.
+
+Par exemple, le réglage des commandes, du son, etc.
+
+2.2. LevelDesign
+2.2.1. Diagramme des niveaux
+
+   
+
+2.2.2. Chemin critique par niveau
+
+Décrivez les actions nécessaires pour boucler un niveau de jeu et donc pour pouvoir continuer la partie.
+
+2.2.3. Tableau des actifs
+
+*Impossible de faire un tableau en bbcode*
+
+Sous la forme d’un tableau, pour chaque niveau du jeu, vous déterminer les éléments de jeu qui seront opérationnels, actifs.
+
+Les actifs (éléments actifs) incluent les pouvoirs, les armes, les types d’ennemis, les types objectifs, les défis, les secrets ou objets cachés, etc.
+
+2.2.4. Eléments du décor génériques
+
+Décrivez les éléments génériques de votre univers.
+
+2.2.5. Eléments du décor uniques
+
+Décrivez les éléments uniques de votre univers.
+
+2.2.6. Blindages
+
+Décrivez les passages obligatoires de votre jeu. Les éléments indissociables à l’avancement du joueur. Par exemple, pour finir le niveau il faut impérativement passer par une porte de couleur verte.
+
+2.2.7. Plans par niveau
+
+Sous la forme d’un dessin schématique, vous devez représenter chaque niveau, l’emplacement des éléments, des entités, des objets, des blindages, etc…
+
+2.3. Moteur du jeu
+2.3.1. Vue générale
+
+Donnez une vue générale de comment votre jeu sera rendu à l’écran, mais sans aller dans les détails, les paragraphes suivants sont là pour çà.
+2.3.2. Moteurs de rendu
+
+Décrivez quel type de moteur de rendu 2D/3D sera utilisé : réaliste, cellshading ? Plutôt 2D, 3D ? Plusieurs sections pourront être rédigées si plusieurs moteurs de rendu sont utilisés.
+
+Par exemple :
+
+·      Moteur 1 : rendu de l’eau
+
+·      Moteur 2 : rendu des collisions
+
+Etc.
+
+2.3.3. Caméras
+
+Décrivez le fonctionnement de la caméra.
+
+Dans ce paragraphe, non seulement vous devez décrire la vue ou les vues du jeu (vue subjective, 3ème personne, etc.) mais aussi ajouter dans des sections distinctes, certaines particularités ou spécificités de mise en scène de votre jeu si nécessaire.
+
+manière innovante et permet de traiter tant de collisions par secondes…
+
+2.3.4. Lumières et Ombres
+
+Décrivez le modèle d’éclairage que vous allez implanter et détailler dans la suite.
+
+Est-ce tu temps réel ou du précalculé ?
+
+Est-ce que vous gérer la réflexion, la réfraction, etc. ?
+
+2.3.5. Effets Spéciaux
+
+Décrire les différents effets spéciaux que vous voulez inclure dans le jeu.
+
+2.3.6. Gestion du son
+
+Décrire la gestion du son dans le jeu vidéo.
+
+2.3.7. Gestion physique
+
+Décrire la gestion physique de votre jeu : détection, collisions, etc.
+
+2.3.8. Multijoueurs
+
+Quelle est la structure adoptée ? Par exemple, client-serveur, Peer to Peer, hébergés chez un des joueurs ou sur une ferme de serveurs, plusieurs serveurs sur une même machine ou non, etc.
+
+Comment le jeu fonctionnera en réseau. Un mode multi-joueurs peut être limité à 2 joueurs sur une même machine ou peut impliquer un réseau local, voire des milliers de machines en réseau Peer to Peer à travers Internet.
+
+2.3.9. Support multilangues
+
+Décrire les langues supportées et le moteur de gestion multilangues…
+
+3. Interface utilisateur
+3.1. Vue générale
+
+Présentez ici une vue générale de votre interface, comme d’habitude, détaillez ensuite dans des sections séparées.
+
+3.2. Graphe des flux
+
+Présentez ici une vue générale et schématique des différents écrans de votre interface utilisateur. Avec un outil comme VISIO (ou autre outil similaire), vous pouvez faire un schéma global qui montre les différents écrans à produire et leur enchaînement interactif.
+
+Cela revient à traduire le système de navigation au sein de votre application.
+
+3.3. Les procédures fonctionnelles
+
+Décrire pour chaque écran d’interface, les actions d'utilisateur possibles et les résultats attendus.
+
+3.4. Les objets de l’interface GUI (Graphical User Interface)
+
+Décrire les éléments de votre interface et leurs actions : boutons, menus, icônes, etc.
+
+Décrire également un écran type de jeu, éventuellement les écrans de jeu secondaires.
+
+3.5. Les périphériques de contrôle
+
+Décrire les périphériques utiles pour jouer, l’agencement des commandes de base, mais aussi des commandes combinées.
+
+4. Editeurs (univers et entités)
+
+Décrire les grandes lignes des éditeurs qui seront utilisés pour concevoir le jeu et peut-être fournis aux joueurs pour qu’ils puissent personnaliser divers éléments de l’univers de jeu : éditeurs de niveaux, de personnages, de véhicules, etc. Mais vous devez aussi préciser si l’utilisateur aura la possibilité de télécharger via Internet, des éléments complémentaires pour enrichir son expérience vidéo ludique.
+
+Remarque : il est très important de réaliser que concevoir un jeu ne peut se faire sans concevoir des outils d’éditions permettant de développer l’univers. Cette partie est donc fondamentale et il est même recommandé, pour chaque éditeur, de rédiger un sous paragraphe.
+
+5. L’Univers du jeu
+5.1. Vue générale
+
+Une vue générale du monde dans lequel se passe le jeu.
+
+Vous devez décrire les principales caractéristiques du monde du jeu, de l’univers.
+
+C’est ici que vous décomposez ce qui fait l’originalité du monde de votre jeu, et que vous décrivez en détails chacun de ces points clé.
+
+Là encore, ne transformez pas ces paragraphes en dépliants publicitaires. Les points clés décrits ici ne doivent pas avoir besoin d’être exagérés, ils doivent être attractifs par eux-mêmes.
+
+5.2. Endroits - Lieux
+
+Décrivez d’abord les endroits clés du jeu : ceux qui sont essentiels pour le déroulement de l’histoire ou de la partie.
+
+Et ensuite, les lieux prévus, mais pas forcément incontournables pour le bon déroulement de la partie.
+
+5.3. Voyage
+
+Décrivez la manière dont le joueur va progresser dans cet univers. Comment il enchaîne sa progression, les étapes, etc. Attention, ne confondez pas ce paragraphe avec le flux de jeu décrit plus haut dans la section Gameplay. Non, ici il s’agit d’expliquer le déroulement de la partie sur le plan scénaristique
+
+5.4. Echelle
+
+Décrivez l’échelle à laquelle vous voyez le monde de votre jeu : à travers les yeux d’un piéton, du haut d’un dragon en vol ? L’échelle conditionne beaucoup de choses dans un jeu.
+
+5.5. Temps et Climat
+
+Décrivez comment le déroulement du temps influera sur le jeu.
+
+Ajoutez ici les sections pertinentes pour votre jeu. Ce peut être par exemple l’influence de la météo sur les comportements et les événements, l’existence d’un mode nuit et d’un mode jour, la prise en compte de saisons, etc.
+
+6. Les entités de l’univers
+6.1. Vue générale
+
+Vue générale de vos entités. Les entités ce sont par exemple les personnages, ou encore les voitures si c’est un jeu de course, etc.
+
+6.2. Les entités jouables
+
+Décrivez les entités de façon détaillée. Il s’agit des personnages par exemple, ou des véhicules si c’est un jeu de course.
+
+6.3. Les entités non jouables
+
+Décrivez les entités que le joueur devra affronter ou rencontrer… Bien entendu, cela dépend du type de jeu, mais dans la plupart des jeux, les joueurs dont devoir affronter des adversaires. Il s’agit de décrire tous les aspects de ces entités adverses : leur aspect, leur caractéristiques, leurs capacités, etc. Ils peuvent être des personnages humains, des voitures, des vaisseaux, etc. Et donc il faut soigner leur description en fonction de la nature de ces entités…
+
+6.4. Les objets
+
+Décrire l’ensemble des objets qu’on peut récupérer et utiliser dans le jeu. Cela peut être des armes, des pièces pour booster son véhicule, etc..
+
+Décrire également le système monétaire s’il existe un de façon précise ainsi que son fonctionnement.
+
+6.5. Les compétences
+
+Décrire l’ensemble des compétences de vos entités : pouvoirs, magies, etc.
+
+Décrire également les moyens dont dispose le joueur, pour les acquérir, ainsi que leurs impacts sur l’univers ou les entités du jeu.
+
+6.6. La création d’entités
+
+Comment le joueur peut créer et personnaliser ses entités. Les caractéristiques disponibles et leur influence sur le jeu.
+
+Attention, il ne s’agit pas de décrire à niveau les éditeurs disponibles, mais d’avantage ce qui est personnalisable ou pas dans le jeu
+
+6.7. Les évolutions des différentes entités
+
+Décrire les possibilité d’évolution des différents personnages, PNJ (personnages non jouables), de leurs compétences…
+
+6.8. Orientation et les Déplacements
+
+Décrire comment le joueur va appréhender l’espace du jeu, quels sont les déplacements possibles pour les différentes entités.
+
+6.9. Interactions inter-entités et entités-univers
+
+Décrire les interactions possibles entre les entités, mais aussi entre les entités et l’univers, l’environnement du jeu.
+
+6.10. Moyens de locomotion
+
+Décrire les moyens de locomotion mis à la disposition du joueur.
+
+7. Histoire
+7.1. Synopsis
+
+En quelques lignes, décrivez le scénario ou du moins la trame, l’intrigue de votre jeu.
+
+Mettez l’accent sur l’approche originale ou innovante que vous faites.
+
+7.2. Découpage interactif du scénario, dialogues
+
+Il y a différentes façons de faire. En voici une.
+
+Votre scénario, doit être découpé en chapitres et les chapitres en sous-chapitres, etc.
+
+Le but c’est de pouvoir articuler votre scénario ou l’histoire qui sert de fil directeur, avec l’enchaînement des niveaux, au sein de l’univers de jeu.
+
+Par exemple, vous pouvez lister les différents niveaux de jeu et mettre en parallèle les parties du scénario qui seront traitées au sein de chaque niveau…
+
+Idem pour les dialogues…
+
+Puis, si vous avez des séquences vidéo (FMV ou Full Motion Video en anglais), alors préciser également les parties du scénario et dialogues qui seront incluses…
+
+Encore une fois l’objectif final, c’est de situer le scénario et les dialogues dans le déroulement du jeu.
+
+7.3. Références et clins d’œil
+
+Décrire les références directes ou indirectes, ainsi que les clins d’œils éventuels.
+
+8. Choix Artistiques : graphisme et animation
+8.1. Vue générale et objectifs
+
+Décrire en quelques lignes, les choix artistiques que vous faites et justifier ces choix.
+
+8.2. Aspects 2D
+
+Quel traitements graphique 2D ? Recherches graphiques…
+
+8.3. Aspects 3D
+
+Quel traitements graphique 3D ? Modélisations type…
+
+8.4. Animations
+
+Quels traitements ? Quel type d’animation ? Puis quels mouvements possibles pour les différents personnages ou entités de votre univers ?
+
+8.5. Cinématiques
+
+Préciser les cinématiques que vous prévoyez en insistant sur l’articulation scénaristique qu’elles vont assumer. Introduction ? Plusieurs fins de partie ? Ces cinématiques seront en images de synthèse, ou utiliserons le moteur 3D du jeu ? Pourquoi ?
+
+8.6. Effets spéciaux
+
+Décrire les effets spéciaux sur le plan artistique.
+
+8.7. Interface utilisateur
+
+Décrire l’interface utilisateur sur le plan artistique.
+
+9. Choix Artistiques : musiques et bruitages
+9.1. Vue générale et objectifs
+
+Décrire en quelques lignes, les choix artistiques que vous faites et justifier ces choix.
+
+9.2. Interface utilisateur et ambiance sonore
+
+Décrire en quelques lignes le fonctionnement sur le plan sonore, de l’interface utilisateur.
+
+Musique de fond dans les menus ou pas ? Bruitages, Voix ? Autre détails sonores ?
+
+9.3. Musiques
+
+Décrire en quelques lignes, les choix artistiques que vous faites et justifier ces choix.
+
+En quoi vos choix renforcent-ils l’ambiance, l’immersion du joueur ?
+
+Est-ce que ça colle à votre univers ?
+
+9.4. Bruitages
+
+Décrire en quelques lignes, les choix artistiques que vous faites et justifier ces choix.
+
+Pour chaque entités composant votre univers, préciser les bruitages attendus, les circonstances de déclenchement, la durée, etc.
+
+9.5. Voix
+
+Si vous optez d’inclure des voix digitalisées pour vos personnages, précisez le type de voix souhaitée, le ton général, etc. Aussi, n’oubliez pas de tenir compte de la langue.
+
+9.6. Effets spéciaux
+
+Décrire en quelques lignes, les choix artistiques que vous faites et justifier ces choix.
