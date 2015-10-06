@@ -8,6 +8,7 @@ public interface Config {
 	public static final float WINDOW_H = 600;
 	
 	public static final float SCALE_W = WINDOW_W / Gdx.graphics.getWidth();
+	public static final float SCALE_H = WINDOW_H / Gdx.graphics.getHeight();
 	
 	
 	

@@ -12,6 +12,8 @@ import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector.GestureListener;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
  * @author rci
@@ -21,6 +23,8 @@ public abstract class View implements ApplicationListener, GestureListener, Inpu
 	//=====VIEW DISPLAY===================================================
 	private OrthographicCamera camera;
 	public OrthographicCamera getCamera(){return this.camera;}
+	private Viewport viewport;
+	public Viewport getViewport(){return this.viewport;}
 	private SpriteBatch batch;
 	public SpriteBatch getBatch(){return this.batch;}
 	
@@ -42,13 +46,16 @@ public abstract class View implements ApplicationListener, GestureListener, Inpu
 	 */
 	@Override
 	public void create() {
-		this.w = Gdx.graphics.getWidth();
-		this.h = Gdx.graphics.getHeight();
+
+		this.w = Config.WINDOW_W;
+		this.h = Config.WINDOW_H;
+		
 		this.camera = new OrthographicCamera(1, h/w);
 
-		camera.viewportWidth=Config.WINDOW_W;
-        camera.viewportHeight=Config.WINDOW_H;
-        camera.update();
+		this.viewport = new StretchViewport(Config.WINDOW_W, Config.WINDOW_H, this.camera);
+		this.viewport.apply();
+		this.camera.position.set(Config.WINDOW_W/2,Config.WINDOW_H/2,0);
+		
 		this.batch = new SpriteBatch();
 	}
 
@@ -66,7 +73,10 @@ public abstract class View implements ApplicationListener, GestureListener, Inpu
 	 */
 	@Override
 	public void render() {
+		camera.update();
 		Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT); // This cryptic line clears the screen.
+		batch.setProjectionMatrix(camera.combined);
+		
         batch.begin();
 		for(final Artefact a:this.artefacts){a.render(batch);}
 		batch.end();

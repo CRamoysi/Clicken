@@ -75,11 +75,19 @@ public abstract class Artefact {
 		}
 		
 	}
-	
+	//--DETAILS--------------------------------
+	private float spriteWidth = 0, spriteHeight = 0;
+	public float getWidth(){return this.spriteWidth;}
+	public float getHeight(){return this.spriteHeight;}
+	public void setWidth(float w){this.spriteWidth = w;}
+	public void setHeight(float h){this.spriteHeight = h;}
+	public void setSpriteDim(float w, float h){this.spriteWidth = w;this.spriteHeight = h;}
 	
 	
 	//--VIEW-----------------------------------
 	private View view;
+	public View getView(){return view;}
+	public void setView(View view){this.view = view;}
 	/**
 	 * À true l'artefact possède une animation
 	 */
@@ -90,8 +98,13 @@ public abstract class Artefact {
 	private ArrayList<Sprite> sprites = new ArrayList<Sprite>();
 	public Sprite getSprite(int i) {return this.sprites.get(i);}
 	public ArrayList<Sprite> getTextures(){return this.sprites;}
-	public void addSprite(Sprite t){this.sprites.add(t);}
-	public void setSprites(ArrayList<Sprite> t){this.sprites = t;}
+	public void addSprite(Sprite t){
+		this.sprites.add(t);
+		if(this.sprites.size() == 1){
+			this.setSpriteDim(this.sprites.get(0).getWidth()*Config.SCALE_W, this.sprites.get(0).getHeight()*Config.SCALE_H);
+		}
+	}
+	public void setSprites(ArrayList<Sprite> t){this.sprites = t;this.setSpriteDim(this.sprites.get(0).getWidth()*Config.SCALE_W, this.sprites.get(0).getHeight()*Config.SCALE_H);}
 	
 	
 	
@@ -100,7 +113,7 @@ public abstract class Artefact {
 	/**
 	 * Cette methode gere la creation d'un Artefact
 	 */
-	public void create(View v){this.view = v;}
+	public void create(View v){this.setView(v);}
 	/**
 	 * Cette methode gere la destruction d'un Artefact
 	 */

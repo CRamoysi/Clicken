@@ -5,6 +5,7 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
 import com.doklaim.clicken.Artefact;
+import com.doklaim.clicken.Config;
 import com.doklaim.clicken.View;
 import com.doklaim.clicken.artefact.Ship;
 
@@ -24,23 +25,12 @@ public class Ecran1 extends View {
 			a.create(this);
 		}
 		
-		
-		
-		
-		
-		
-		
-		
+		//LISTENERS
 		InputMultiplexer im = new InputMultiplexer();
         GestureDetector gd = new GestureDetector(this);
         im.addProcessor(gd);
         im.addProcessor(this);
-        
-        
         Gdx.input.setInputProcessor(im);
-		
-		
-		
 	}
 
 	@Override
@@ -66,11 +56,7 @@ public class Ecran1 extends View {
 
 	@Override
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
-		System.out.println("doklaim::Ecran1:pan() => ("+deltaX+","+deltaY+")");
-		
-		this.getArtefact(0).move(deltaX, deltaY);
-		
-		
+		this.getArtefact(0).move(deltaX*Config.SCALE_W, deltaY*Config.SCALE_H);
 		return false;
 	}
 

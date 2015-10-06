@@ -1,6 +1,5 @@
 package com.doklaim.clicken.artefact;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -24,13 +23,11 @@ public class Ship extends Artefact{
 		Sprite sprite = new Sprite(t);
 		sprite.getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		sprite.setSize(sprite.getWidth()/Config.SCALE_W, sprite.getHeight()/Config.SCALE_W);
-		System.out.println(sprite.getWidth()+".."+ sprite.getHeight());
+
 		addSprite(sprite);
 		
-		System.out.println(sprite.getWidth()/Config.SCALE_W+".."+ sprite.getHeight()/Config.SCALE_W);
-		System.out.println(v.getW()/2+".."+ v.getH()/2);
-		this.setR(v.getW()/2, v.getH()/2);
-		this.setS(v.getW()/2, v.getH()/2);
+		this.setR(0, 0);
+		this.setS(0, 0);
 		this.setSpeed(Config.SPEED_X,  Config.SPEED_Y);
 	}
 
@@ -44,7 +41,18 @@ public class Ship extends Artefact{
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		if(this.getSX() < 0){
+			this.setSX(0);
+		}
+		if(this.getSX()>Config.WINDOW_W-this.getWidth()){
+			this.setSX(Config.WINDOW_W-this.getWidth());
+		}
+		if(this.getSY() < 0){
+			this.setSY(0);
+		}
+		if(this.getSY()>Config.WINDOW_H-this.getHeight()){
+			this.setSY(Config.WINDOW_H-this.getHeight());
+		}
 		
 	}
 
